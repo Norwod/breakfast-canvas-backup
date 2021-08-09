@@ -19,16 +19,20 @@ import {
     Body1,
     Body3,
 } from '@sberdevices/plasma-ui';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { detectDevice, isSberPortal } from '@sberdevices/plasma-ui/utils/deviceDetection';
+import { Tabs, TabItem } from '@sberdevices/plasma-ui/components/Tabs/Tabs';
+
+import { Tab1 } from './tabs/tab1';
+import { Tab2 } from './tabs/tab2';
+import { Tab3 } from './tabs/tab3';
+import { Tab4 } from './tabs/tab4';
+import { useAssistant } from './../hooks/useAssistant';
+import { reducer } from './store';
 
 
-import {
-    createSmartappDebugger,
-    createAssistant,
-    AssistantAppState,
-} from "@sberdevices/assistant-client";
-
+import { Route } from '../consts/routes';
 
 
 const heightMap = {
@@ -75,59 +79,103 @@ const Half: React.FC = ({ children }) => (
         {children}
     </Col>
 );
+const Catalog = () => {   
 
-const Catalog = () => {
+    const [appState, dispatch] = useReducer(reducer, {
+        currentTab: 0
+    });
 
-    const initialize = (getState = () => ({})) => {
-        return createAssistant({ getState });
-    };
-    const assistant = initialize();
+    useEffect(() => {
+        useAssistant(dispatch);
+    }, []);
 
-    assistant.sendData({ action: { action_id: 'CATALOG' } });
+    const action = (text: any) => () => {
+        console.log(text);
+    }
+
+    const route = () => {
+        switch (appState.currentTab) {
+            case 0:
+                return <Tab1 dispatch={dispatch} />;
+            case 1:
+                return <Tab2 />;
+            case 2:
+                return <Tab3/>;
+            case 3:
+                return <Tab4 />;
+        }
+    }
 
     return (
         <>
-            {/* <Container>{detectDevice() === 'mobile' && <Logo />}</Container> */}
-            <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                <Container>
-
-                    <Row>
-                        <Col sizeS={4} sizeM={5} sizeL={8} sizeXL={8} style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-                            <Row>
-                                <Half>
-
-                                    <StyledCard outlined scaleOnFocus onClick={() => assistant.sendData({ action: { action_id: 'MOHITO' } })}>
-                                        <CardBody>
-                                            <CardContent cover>
-                                                <TextBox>
-                                                    <TextBoxBigTitle>Мохито</TextBoxBigTitle>
-                                                </TextBox>
-                                            </CardContent>
-                                        </CardBody>
-                                    </StyledCard>
-
-                                </Half>
-                                <Half>
-
-                                    <StyledCard outlined scaleOnFocus onClick={() => assistant.sendData({ action: { action_id: 'TROPICAL' } })}>
-                                        <CardBody>
-
-                                            <CardContent cover>
-                                                <TextBox>
-                                                    <TextBoxBigTitle>Тропический</TextBoxBigTitle>
-                                                </TextBox>
-                                            </CardContent>
-                                        </CardBody>
-                                    </StyledCard>
-
-                                </Half>
-                            </Row>
-                        </Col>
-                    </Row>
-
-                </Container>
-            </div>
-
+           <main className="app">
+            <Container style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: '1em'}}>
+                <>
+                    <Tabs
+                        size='l'
+                        view='secondary'
+                        stretch={true}
+                        pilled={false}
+                        scaleOnPress={true}
+                        outlined={false}
+                        disabled={false}
+                    >
+                        <TabItem
+                            key={`item0`}
+                            isActive={appState.currentTab === 0}
+                            tabIndex={0}
+                            contentLeft={true}
+                            onClick={() => dispatch({ type: 'SELECT', tab: 0 })}
+                            onFocus={action(`onFocus item #${0}`)}
+                            onBlur={action(`onBlur item #${0}`)}
+                        >
+                            Каши
+                        </TabItem>
+                        <TabItem
+                            key={`item1`}
+                            isActive={appState.currentTab === 1}
+                            tabIndex={1}
+                            contentLeft={true}
+                            onClick={() => dispatch({ type: 'SELECT', tab: 1 })}
+                            onFocus={action(`onFocus item #${1}`)}
+                            onBlur={action(`onBlur item #${1}`)}
+                        >
+                            Яичница
+                        </TabItem>
+                        <TabItem
+                            key={`item2`}
+                            isActive={appState.currentTab === 2}
+                            tabIndex={2}
+                            contentLeft={true}
+                            onClick={() => dispatch({ type: 'SELECT', tab: 2 })}
+                            onFocus={action(`onFocus item #${2}`)}
+                            onBlur={action(`onBlur item #${2}`)}
+                        >
+                            Детский
+                        </TabItem>
+                        <TabItem
+                            key={`item3`}
+                            isActive={appState.currentTab === 3}
+                            tabIndex={3}
+                            contentLeft={true}
+                            onClick={() => dispatch({ type: 'SELECT', tab: 3 })}
+                            onFocus={action(`onFocus item #${3}`)}
+                            onBlur={action(`onBlur item #${3}`)}
+                        >
+                            Блины
+                        </TabItem>
+                    </Tabs>
+                    <Container>
+                        <Row style={{marginTop: '1em'}}>
+                            <Col size={10}>
+                                {route()}
+                            </Col>
+                        </Row>
+                    </Container>
+                </>
+            </Container>
+        </main>
+            
         </>
     );
 };
