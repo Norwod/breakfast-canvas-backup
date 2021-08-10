@@ -18,6 +18,7 @@ npm-debug.log
 dist/
 umd/
 *.tsbuildinfo
+.next
 
 # cypress
 cypress/screenshots/

@@ -10,7 +10,7 @@ const ReceiptItem = ({ image, contentLeft, contentRight }) => {
             {/* <Image src={image} style={{ maxWidth: '10rem', float: "left"}} /> */}
             {/* <Cell contentLeft={contentLeft} content="" contentRight={contentRight} /> */}
             {/*<Body1>{contentLeft}</Body1> */}
-            <Cell contentLeft={<Image src={image} style={{ maxWidth: '15rem', float: "left",marginRight: "10px"}} />} content={contentLeft} />
+            <Cell content={contentLeft} />
         </div>
     );
 

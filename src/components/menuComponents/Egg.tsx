@@ -7,12 +7,12 @@ import {
     Card,
     CardContent,
     CardBody,
-    TextBoxBigTitle    
+    TextBoxBigTitle
 } from '@sberdevices/plasma-ui';
 import styled from 'styled-components';
 import { detectDevice } from '@sberdevices/plasma-ui/utils/deviceDetection';
 
-import {sendData} from '../../hooks/useAssistant';
+import { sendData } from '../../hooks/useAssistant';
 import Link from "next/link";
 import { Route } from "../../consts/routes";
 
@@ -49,26 +49,27 @@ const Pancake = () => {
                             <Row>
                                 <Half>
                                     <Link href={Route.OMELETE}>
-                                    <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'MOHITO' } })}>
-                                        <CardBody>
-                                            <CardContent cover>
-                                                <TextBox>
-                                                    <TextBoxBigTitle>Омлет</TextBoxBigTitle>
-                                                </TextBox>
-                                            </CardContent>
-                                        </CardBody>
-                                    </StyledCard>
+                                        <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'MOHITO' } })}>
+                                            <CardBody>
+                                                <CardContent cover>
+                                                    <TextBox>
+                                                        <TextBoxBigTitle>Омлет</TextBoxBigTitle>
+                                                    </TextBox>
+                                                </CardContent>
+                                            </CardBody>
+                                        </StyledCard>
                                     </Link>
                                 </Half>
                                 <Half>
                                     <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'TROPICAL' } })}>
                                         <CardBody>
-
-                                            <CardContent cover>
-                                                <TextBox>
-                                                    <TextBoxBigTitle>Яичница</TextBoxBigTitle>
-                                                </TextBox>
-                                            </CardContent>
+                                            <Link href={Route.EGGBREAD}>
+                                                <CardContent cover>
+                                                    <TextBox>
+                                                        <TextBoxBigTitle>Яичница в хлебе, с сыром и колбасой</TextBoxBigTitle>
+                                                    </TextBox>
+                                                </CardContent>
+                                            </Link>
                                         </CardBody>
                                     </StyledCard>
                                 </Half>

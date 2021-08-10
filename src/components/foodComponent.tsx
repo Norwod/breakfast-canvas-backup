@@ -1,7 +1,5 @@
 import React, { useReducer } from 'react';
 import { Cell, Col, Container, Header, Row, TabItem, Tabs } from '@sberdevices/plasma-ui';
-// import IngredientList from '../components/ingredientСomponents/ingredient-list';
-// import ReceiptList from '../components/receiptComponents/receipt-list'
 import { Headline3 } from '@sberdevices/plasma-ui';
 import Layout from '../components/Layout';
 import { route } from 'next/dist/next-server/server/router';
@@ -10,6 +8,7 @@ import { reducer } from './../components/store';
 import IngredientList from './ingredientСomponents/ingredient-list';
 import ReceiptList from './receiptComponents/receipt-list';
 import MyHeader from './MyHeader';
+import CarouselList from './carouselImageComponent/carousel-list';
 import { Route } from '../consts/routes';
 
 const FoodComponent = (props: any) => {
@@ -27,10 +26,13 @@ const FoodComponent = (props: any) => {
 
         return (
             <div>
-                <div style={{marginLeft: "auto", marginRight: 'auto'}}>
+                <div style={{ marginLeft: "auto", marginRight: 'auto', marginBottom: "1%" }}>
                     <Headline3>Приготовление: </Headline3>
                 </div>
-                <ReceiptList receipt={props.receipt} />
+                <>
+                     <ReceiptList receipt={props.receipt} /> 
+                    <CarouselList srcs={props.images} />
+                </>
             </div>
         );
     }
@@ -54,11 +56,10 @@ const FoodComponent = (props: any) => {
 
     return (
         <Layout>
-            <MyHeader label={props.header}/> 
-            <Header back={true} onBackClick={() => console.log("Click!")} />
+            <Col sizeS={4} sizeM={5} sizeL={6} sizeXL={8} style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+                <MyHeader label={props.header} />
+            </Col>
             <Container>
-            <Header back={true} onBackClick={() => console.log("Click!")} />
-             <MyHeader label={props.header}/> 
                 <Col sizeS={4} sizeM={5} sizeL={6} sizeXL={8} style={{ marginLeft: 'auto', marginRight: 'auto' }}>
                     <div style={{ marginTop: '1%', marginBottom: '1%' }}>
                         <Tabs
@@ -101,7 +102,6 @@ const FoodComponent = (props: any) => {
                 </Col>
             </Container>
         </Layout>
-
     );
 };
 
