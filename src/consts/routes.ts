@@ -4,5 +4,6 @@ export enum Route {
     OMELETE = '/egg/omelet',
     EGGBREAD = '/egg/eggbread',
     LAYEROMELET = '/egg/layeromelet',
-    SHAKSHUKA = '/egg/shakshuka'
+    SHAKSHUKA = '/egg/shakshuka',
+    AIREGG = '/egg/airegg'
 }

@@ -99,6 +99,19 @@ const Pancake = () => {
                                         </CardBody>
                                     </StyledCard>
                                 </Half>
+                                <Half>
+                                    <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'TROPICAL' } })}>
+                                        <CardBody>
+                                            <Link href={Route.AIREGG}>
+                                                <CardContent cover>
+                                                    <TextBox>
+                                                        <TextBoxBigTitle>Воздушные яйца кокот со шпинатом, сыром и сметаной</TextBoxBigTitle>
+                                                    </TextBox>
+                                                </CardContent>
+                                            </Link>
+                                        </CardBody>
+                                    </StyledCard>
+                                </Half>
                             </Row>
                         </Col>
                     </Row>
