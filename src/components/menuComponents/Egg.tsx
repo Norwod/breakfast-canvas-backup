@@ -73,6 +73,32 @@ const Pancake = () => {
                                         </CardBody>
                                     </StyledCard>
                                 </Half>
+                                <Half>
+                                    <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'TROPICAL' } })}>
+                                        <CardBody>
+                                            <Link href={Route.LAYEROMELET}>
+                                                <CardContent cover>
+                                                    <TextBox>
+                                                        <TextBoxBigTitle>Слоёный омлет с ветчиной, помидорами и сыром</TextBoxBigTitle>
+                                                    </TextBox>
+                                                </CardContent>
+                                            </Link>
+                                        </CardBody>
+                                    </StyledCard>
+                                </Half>
+                                <Half>
+                                    <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'TROPICAL' } })}>
+                                        <CardBody>
+                                            <Link href={Route.SHAKSHUKA}>
+                                                <CardContent cover>
+                                                    <TextBox>
+                                                        <TextBoxBigTitle>Шакшука</TextBoxBigTitle>
+                                                    </TextBox>
+                                                </CardContent>
+                                            </Link>
+                                        </CardBody>
+                                    </StyledCard>
+                                </Half>
                             </Row>
                         </Col>
                     </Row>

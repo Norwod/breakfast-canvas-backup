@@ -3,13 +3,9 @@ import { Cell } from '@sberdevices/plasma-ui';
 import { Image } from '@sberdevices/plasma-core';
 import { Body1 } from '@sberdevices/plasma-ui';
 
-const ReceiptItem = ({ image, contentLeft, contentRight }) => {
+const ReceiptItem = ({ contentLeft, contentRight }) => {
     return (
         <div style={{borderBottom: "0.5mm ridge rgb(200, 202, 200, .6)"}}>
-            
-            {/* <Image src={image} style={{ maxWidth: '10rem', float: "left"}} /> */}
-            {/* <Cell contentLeft={contentLeft} content="" contentRight={contentRight} /> */}
-            {/*<Body1>{contentLeft}</Body1> */}
             <Cell content={contentLeft} />
         </div>
     );

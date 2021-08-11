@@ -35,8 +35,7 @@ const Pashot = () => {
         
     return (
         <div>
-            <FoodComponent header="Яйцо пашот" ingredients={ingredients} receipt={receipt} images={images} />           
-
+            <FoodComponent header="Яйцо пашот" ingredients={ingredients} receipt={receipt} images={images} />
         </div>
     );
 };
