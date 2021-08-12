@@ -167,7 +167,7 @@ const Catalog = () => {
                     </Tabs>
                     <Container>
                         <Row style={{marginTop: '1em'}}>
-                            <Col size={10}>
+                            <Col size={10} style = {{marginLeft: 'auto', marginRight: 'auto'}}>
                                 {route()}
                             </Col>
                         </Row>

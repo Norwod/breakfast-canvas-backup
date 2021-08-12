@@ -8,23 +8,22 @@ const Template = () => {
 
     const ingredients = [
         { contentLeft: "", contentRight: "" },
-        { contentLeft: "", contentRight: "" },
-        { contentLeft: "", contentRight: "" },
-        { contentLeft: "", contentRight: "" },
-        { contentLeft: "", contentRight: "" }   
     ];
 
-    const receipt = [        
-        { image: "", contentLeft: "" },
-        { image: "", contentLeft: "" },
-        { image: "", contentLeft: "" },
-        { image: "", contentLeft: "" },
-        { image: "", contentLeft: "" },
-        { image: "", contentLeft: "" }
-        ];   
+    const receipt = [
+        { contentLeft: "" },
+        ];
+
+    const images = [
+        { src: ""},
+    ];
+
+    const description = "";
 
     return (
-       <FoodComponent header="" ingredients={ingredients} receipt={receipt} />
+        <div>
+            <FoodComponent header="Test page" ingredients={ingredients} receipt={receipt} images={images} description={description} />
+        </div>
     );
 };
 

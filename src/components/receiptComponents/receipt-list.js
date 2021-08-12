@@ -4,10 +4,11 @@ import ReceiptItem from './receipt-item';
 
 const ReceiptList = ({ receipt }) => {
 
-  const elements = receipt.map((item) => {
+  const elements = receipt.map((item, index) => {
     return (
-      <>
-        <ReceiptItem {...item } />
+      <>  
+        
+        <ReceiptItem {...item} />
       </>
     );
   });

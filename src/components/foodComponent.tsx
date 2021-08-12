@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
-import { Cell, Col, Container, Header, Row, TabItem, Tabs } from '@sberdevices/plasma-ui';
-import { Headline3 } from '@sberdevices/plasma-ui';
+import { Body1, Cell, Col, Container, Header, Row, TabItem, Tabs } from '@sberdevices/plasma-ui';
+import { Headline2 } from '@sberdevices/plasma-ui';
 import Layout from '../components/Layout';
 import { route } from 'next/dist/next-server/server/router';
 import { useAssistant } from './../hooks/useAssistant';
@@ -10,14 +10,24 @@ import ReceiptList from './receiptComponents/receipt-list';
 import MyHeader from './MyHeader';
 import CarouselList from './carouselImageComponent/carousel-list';
 import { Route } from '../consts/routes';
+import Description from './Description';
 
-const FoodComponent = (props: any) => {
+const FoodComponent = (props: any) => {    
 
     const Ingredient = () => {
 
         return (
             <div>
-                <IngredientList ingredients={props.ingredients} />
+                <div>
+                    <IngredientList ingredients={props.ingredients} />
+                </div>
+                <div style={{marginTop: '1%', marginBottom: '1%'}}>
+                    <Headline2>Описание:</Headline2>
+                </div>
+                <div>
+                    <Description description={props.description} />
+                </div>
+
             </div>
         );
     }
@@ -27,10 +37,10 @@ const FoodComponent = (props: any) => {
         return (
             <div>
                 <div style={{ marginLeft: "auto", marginRight: 'auto', marginBottom: "1%" }}>
-                    <Headline3>Приготовление: </Headline3>
+                    <Headline2>Приготовление:</Headline2>
                 </div>
                 <>
-                     <ReceiptList receipt={props.receipt} /> 
+                    <ReceiptList receipt={props.receipt} />
                     <CarouselList srcs={props.images} />
                 </>
             </div>
