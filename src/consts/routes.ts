@@ -1,6 +1,6 @@
 export enum Route {
     INDEX = '/',
-    RICE = '/rice',
+    RICE = '/poridge/rice',
     OMELETE = '/egg/omelet',
     EGGBREAD = '/egg/eggbread',
     LAYEROMELET = '/egg/layeromelet',
