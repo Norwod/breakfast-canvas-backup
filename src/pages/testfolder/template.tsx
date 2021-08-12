@@ -8,7 +8,6 @@ const Template = () => {
 
     const ingredients = [
         { contentLeft: "", contentRight: "" },
-       
     ];
 
     const receipt = [
@@ -16,13 +15,14 @@ const Template = () => {
         ];
 
     const images = [
-        { src: ""},        
+        { src: ""},
     ];
+
+    const description = "";
 
     return (
         <div>
-            <FoodComponent header="Test page" ingredients={ingredients} receipt={receipt} images={images} />           
-
+            <FoodComponent header="Test page" ingredients={ingredients} receipt={receipt} images={images} description={description} />
         </div>
     );
 };

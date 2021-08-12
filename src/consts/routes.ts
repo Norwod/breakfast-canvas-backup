@@ -5,5 +5,9 @@ export enum Route {
     EGGBREAD = '/egg/eggbread',
     LAYEROMELET = '/egg/layeromelet',
     SHAKSHUKA = '/egg/shakshuka',
-    AIREGG = '/egg/airegg'
+    AIREGG = '/egg/airegg',
+    CONVERT = '/egg/convert',
+    PANCAKE = '/pancake/pancake',
+    JAPANEESEPANCAKE='/pancake/japaneesepancake',
+    OLAD='/pancake/olad'
 }

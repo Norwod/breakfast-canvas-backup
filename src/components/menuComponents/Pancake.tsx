@@ -11,7 +11,9 @@ import {
 } from '@sberdevices/plasma-ui';
 import styled from 'styled-components';
 import { detectDevice } from '@sberdevices/plasma-ui/utils/deviceDetection';
-import {sendData} from '../../hooks/useAssistant';
+import { sendData } from '../../hooks/useAssistant';
+import Link from "next/link";
+import { Route } from "../../consts/routes";
 
 
 const heightMap = {
@@ -32,7 +34,7 @@ const Half: React.FC = ({ children }) => (
     </Col>
 );
 
-const Pancake = () => {    
+const Pancake = () => {
 
     //sendData({ action: { action_id: 'PANCAKE' } });
 
@@ -45,27 +47,43 @@ const Pancake = () => {
                         <Col sizeS={4} sizeM={5} sizeL={8} sizeXL={8} style={{ marginLeft: 'auto', marginRight: 'auto' }}>
                             <Row>
                                 <Half>
-                                    <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'MOHITO' } })}>
-                                        <CardBody>
-                                            <CardContent cover>
-                                                <TextBox>
-                                                    <TextBoxBigTitle>Блины</TextBoxBigTitle>
-                                                </TextBox>
-                                            </CardContent>
-                                        </CardBody>
-                                    </StyledCard>
+                                    <Link href={Route.PANCAKE}>
+                                        <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'MOHITO' } })}>
+                                            <CardBody>
+                                                <CardContent cover>
+                                                    <TextBox>
+                                                        <TextBoxBigTitle>Панкейки (американские блинчики)</TextBoxBigTitle>
+                                                    </TextBox>
+                                                </CardContent>
+                                            </CardBody>
+                                        </StyledCard>
+                                    </Link>
                                 </Half>
                                 <Half>
-                                    <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'TROPICAL' } })}>
-                                        <CardBody>
-
-                                            <CardContent cover>
-                                                <TextBox>
-                                                    <TextBoxBigTitle>Блины</TextBoxBigTitle>
-                                                </TextBox>
-                                            </CardContent>
-                                        </CardBody>
-                                    </StyledCard>
+                                <Link href={Route.JAPANEESEPANCAKE}>
+                                        <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'MOHITO' } })}>
+                                            <CardBody>
+                                                <CardContent cover>
+                                                    <TextBox>
+                                                        <TextBoxBigTitle>Воздушные японские панкейки</TextBoxBigTitle>
+                                                    </TextBox>
+                                                </CardContent>
+                                            </CardBody>
+                                        </StyledCard>
+                                    </Link>
+                                </Half>
+                                <Half>
+                                <Link href={Route.OLAD}>
+                                        <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'MOHITO' } })}>
+                                            <CardBody>
+                                                <CardContent cover>
+                                                    <TextBox>
+                                                        <TextBoxBigTitle>Оладьи с колбасой и сыром</TextBoxBigTitle>
+                                                    </TextBox>
+                                                </CardContent>
+                                            </CardBody>
+                                        </StyledCard>
+                                    </Link>
                                 </Half>
                             </Row>
                         </Col>

@@ -46,10 +46,11 @@ const AirEgg = () => {
         { src: "https://img1.russianfood.com/dycontent/images_upl/511/big_510196.jpg"}   
     ];
 
+    const description =  "Яйца кокот - яичница с различными добавками, запечённая в духовке в порционных формочках-кокотницах на паровой бане. Оригинальный вариант приготовления воздушных яиц кокот - со взбитыми белками, а также со шпинатом, сметаной и сыром. Отличная идея для воскресного завтрака - вкусно и красиво!" 
+
     return (
         <div>
-            <FoodComponent header="Воздушные яйца кокот со шпинатом, сыром и сметаной" ingredients={ingredients} receipt={receipt} images={images} />           
-
+            <FoodComponent header="Воздушные яйца кокот со шпинатом, сыром и сметаной" ingredients={ingredients} receipt={receipt} images={images} description={description} />           
         </div>
     );
 };

@@ -44,7 +44,6 @@ const Shakshuka = () => {
     return (
         <div>
             <FoodComponent header="Шакшука" ingredients={ingredients} receipt={receipt} images={images} />
-
         </div>
     );
 };

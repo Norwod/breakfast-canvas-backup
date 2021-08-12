@@ -112,6 +112,19 @@ const Pancake = () => {
                                         </CardBody>
                                     </StyledCard>
                                 </Half>
+                                <Half>
+                                    <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'TROPICAL' } })}>
+                                        <CardBody>
+                                            <Link href={Route.CONVERT}>
+                                                <CardContent cover>
+                                                    <TextBox>
+                                                        <TextBoxBigTitle>Яичный конвертик с сыром</TextBoxBigTitle>
+                                                    </TextBox>
+                                                </CardContent>
+                                            </Link>
+                                        </CardBody>
+                                    </StyledCard>
+                                </Half> 
                             </Row>
                         </Col>
                     </Row>
