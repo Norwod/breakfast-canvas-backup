@@ -9,5 +9,6 @@ export enum Route {
     CONVERT = '/egg/convert',
     PANCAKE = '/pancake/pancake',
     JAPANEESEPANCAKE='/pancake/japaneesepancake',
-    OLAD='/pancake/olad'
+    OLAD='/pancake/olad',
+    BLINI = '/pancake/blini'
 }

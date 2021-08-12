@@ -60,7 +60,7 @@ const Pancake = () => {
                                     </Link>
                                 </Half>
                                 <Half>
-                                <Link href={Route.JAPANEESEPANCAKE}>
+                                    <Link href={Route.JAPANEESEPANCAKE}>
                                         <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'MOHITO' } })}>
                                             <CardBody>
                                                 <CardContent cover>
@@ -73,12 +73,25 @@ const Pancake = () => {
                                     </Link>
                                 </Half>
                                 <Half>
-                                <Link href={Route.OLAD}>
+                                    <Link href={Route.OLAD}>
                                         <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'MOHITO' } })}>
                                             <CardBody>
                                                 <CardContent cover>
                                                     <TextBox>
                                                         <TextBoxBigTitle>Оладьи с колбасой и сыром</TextBoxBigTitle>
+                                                    </TextBox>
+                                                </CardContent>
+                                            </CardBody>
+                                        </StyledCard>
+                                    </Link>
+                                </Half>
+                                <Half>
+                                    <Link href={Route.BLINI}>
+                                        <StyledCard outlined scaleOnFocus onClick={() => sendData({ action: { action_id: 'MOHITO' } })}>
+                                            <CardBody>
+                                                <CardContent cover>
+                                                    <TextBox>
+                                                        <TextBoxBigTitle>Заварные блины</TextBoxBigTitle>
                                                     </TextBox>
                                                 </CardContent>
                                             </CardBody>
